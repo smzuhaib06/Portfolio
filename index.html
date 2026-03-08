@@ -621,7 +621,7 @@ footer span{color:var(--teal);}
   </div>
 </section>
 
-<footer>Mohammed Zuhaib Sailappay &nbsp;·&nbsp; Panimalar Engineering College &nbsp;·&nbsp; <span>B.E. CSE 2027</span> &nbsp;·&nbsp; Ambur, TN</footer>
+<!--<footer>Mohammed Zuhaib Sailappay &nbsp;·&nbsp; Panimalar Engineering College &nbsp;·&nbsp; <span>B.E. CSE 2027</span> &nbsp;·&nbsp; Ambur, TN</footer>-->
 
 <script>
 document.addEventListener('contextmenu',e=>e.preventDefault());
@@ -813,6 +813,136 @@ function revealContact(type){
   else{const e=['mohammedzuhaib7','01479','@gmail.com'];box.innerHTML='<span style="color:var(--teal)">'+e.join('')+'</span>';setTimeout(()=>{box.style.display='none';},15000);}
   box.style.display='block';
 }
+</script>
+  <!-- ═══════════════════════════════════════════════
+     ZUHAIB FOOTER SNIPPET — paste just before </body>
+     No external dependencies. Works on any HTML page.
+     Update your Discord invite link on line marked ★
+═══════════════════════════════════════════════ -->
+
+<style>
+.zfooter{
+  background:#040810;border-top:1px solid rgba(0,212,170,0.12);
+  padding:2.2rem 4rem;display:flex;flex-direction:column;
+  align-items:center;gap:1.6rem;font-family:'JetBrains Mono','Courier New',monospace;
+  position:relative;z-index:2;
+}
+.zfooter-top{
+  display:flex;justify-content:space-between;align-items:center;
+  width:100%;max-width:1100px;flex-wrap:wrap;gap:1.2rem;
+}
+.zfooter-brand{
+  font-size:1.4rem;font-weight:900;color:#f0f4f8;letter-spacing:-0.02em;
+  font-family:'Outfit','Segoe UI',sans-serif;
+}
+.zfooter-brand span{color:#00d4aa;}
+.zfooter-social{display:flex;align-items:center;gap:0.7rem;}
+.zsb{
+  display:flex;align-items:center;justify-content:center;
+  width:40px;height:40px;border:1px solid rgba(255,255,255,0.06);
+  color:#8899aa;text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden;
+}
+.zsb::before{
+  content:'';position:absolute;inset:0;background:#00d4aa;
+  transform:scaleY(0);transform-origin:bottom;transition:transform 0.25s;z-index:0;
+}
+.zsb:hover{color:#040810;border-color:#00d4aa;}
+.zsb:hover::before{transform:scaleY(1);}
+.zsb svg{width:16px;height:16px;position:relative;z-index:1;fill:currentColor;}
+.zfooter-divider{width:100%;max-width:1100px;height:1px;background:rgba(255,255,255,0.06);}
+.zfooter-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  width:100%;max-width:1100px;flex-wrap:wrap;gap:1rem;
+}
+.zfooter-copy{
+  font-size:0.62rem;letter-spacing:0.15em;color:#3a4a5a;text-transform:uppercase;
+}
+.zfooter-copy span{color:#00d4aa;}
+.zvisitor-wrap{display:flex;align-items:center;gap:0.7rem;font-size:0.65rem;letter-spacing:0.1em;color:#3a4a5a;}
+.zvisitor-badge{
+  display:flex;align-items:center;gap:0.5rem;
+  background:#0d1828;border:1px solid rgba(0,212,170,0.15);
+  padding:0.3rem 0.8rem;
+}
+.zvisitor-dot{
+  width:6px;height:6px;border-radius:50%;background:#00d4aa;
+  box-shadow:0 0 8px #00d4aa;animation:zpulse 2s ease-in-out infinite;
+}
+@keyframes zpulse{0%,100%{box-shadow:0 0 6px #00d4aa}50%{box-shadow:0 0 18px #00d4aa}}
+.zvisitor-count{color:#00d4aa;font-weight:600;font-size:0.75rem;min-width:2ch;}
+@media(max-width:640px){
+  .zfooter{padding:2rem 1.5rem;}
+  .zfooter-top,.zfooter-bottom{flex-direction:column;align-items:center;text-align:center;}
+}
+</style>
+
+<footer class="zfooter">
+  <div class="zfooter-top">
+    <div class="zfooter-brand">MZ <span>·</span> Mohammed Zuhaib</div>
+    <div class="zfooter-social">
+
+      <!-- Email -->
+      <a class="zsb" title="Email"
+         href="#"
+         onclick="(function(e){e.preventDefault();
+           var p=['mohammedzuhaib7','01479','@gmail.com'];
+           window.location.href='mailto:'+p.join('');
+         })(event)">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </a>
+
+      <!-- GitHub -->
+      <a class="zsb" title="GitHub"
+         href="https://github.com/smzuhaib06" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.341-3.369-1.341-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a class="zsb" title="LinkedIn"
+         href="https://linkedin.com/in/sailappay-mohammed-zuhaib" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+
+      <!-- Discord ★ Replace the href with your actual Discord invite or profile link -->
+      <a class="zsb" title="Discord"
+         href="https://discord.com/users/hackerz_06" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="zfooter-divider"></div>
+
+  <div class="zfooter-bottom">
+    <div class="zfooter-copy">
+      Mohammed Zuhaib Sailappay &nbsp;·&nbsp; Panimalar Engineering College &nbsp;·&nbsp; <span>B.E. CSE 2027</span>
+    </div>
+    <div class="zvisitor-wrap">
+      <div class="zvisitor-badge">
+        <div class="zvisitor-dot"></div>
+        <span class="zvisitor-count" id="zvc">—</span>
+      </div>
+      <span>total visitors</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var el=document.getElementById('zvc');
+  if(!el)return;
+  fetch('https://api.countapi.xyz/hit/zuhaib-mz-portfolio/visits')
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d&&d.value){
+        var n=d.value;
+        var display=n>=1000?(n/1000).toFixed(1)+'k':n.toString();
+        el.textContent=display;
+      }
+    })
+    .catch(function(){el.textContent='—';});
+})();
 </script>
 </body>
 </html>
