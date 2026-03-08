@@ -612,7 +612,7 @@ footer span{color:var(--teal);}
         <div class="form-status" id="formStatus"></div>
       </form>
       <div class="contact-links">
-        <button class="c-link" onclick="revealContact('li')">View LinkedIn</button>
+        <!-- <button class="c-link" onclick="revealContact('li')">View LinkedIn</button> -->
         <!-- <button class="c-link" onclick="revealContact('em')">View Email</button> -->
         <span style="font-family:var(--mono);font-size:0.7rem;color:var(--dim);letter-spacing:0.12em">Ambur · Tamil Nadu · India</span>
       </div>
@@ -928,21 +928,6 @@ function revealContact(type){
   </div>
 </footer>
 
-<script>
-(function(){
-  var el=document.getElementById('zvc');
-  if(!el)return;
-  fetch('https://api.countapi.xyz/hit/zuhaib-mz-portfolio/visits')
-    .then(function(r){return r.json();})
-    .then(function(d){
-      if(d&&d.value){
-        var n=d.value;
-        var display=n>=1000?(n/1000).toFixed(1)+'k':n.toString();
-        el.textContent=display;
-      }
-    })
-    .catch(function(){el.textContent='—';});
-})();
-</script>
+<script> (function(){ var el = document.getElementById('zvc'); if(!el) return; function fmt(n){ if(n >= 1000000) return (n/1000000).toFixed(1)+'M'; if(n >= 1000) return (n/1000).toFixed(1)+'k'; return n.toString();} var domain = 'https://mohammedzuhaib.netlify.app'; fetch('https://visitor.6developer.com/visit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ domain: domain, page_path: window.location.pathname, page_title: document.title, referrer: document.referrer || '' }) }) .then(function(r){ return r.json(); }) .then(function(d){ if(d && typeof d.totalCount === 'number'){ el.textContent = fmt(d.totalCount); } else { el.textContent = '—'; } }) .catch(function(){ el.textContent = '—'; }); })(); </script>
 </body>
 </html>
