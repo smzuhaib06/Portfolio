@@ -176,12 +176,12 @@ nav.stuck{background:rgba(4,8,16,0.88);backdrop-filter:blur(24px);border-bottom:
 /* EXPERIENCE */
 #experience{background:var(--bg);}
 .exp-list{display:flex;flex-direction:column;}
-.exp-item{display:grid;grid-template-columns:200px 1fr;gap:0 3rem;padding:2.5rem 0;border-bottom:1px solid var(--border2);}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:0 3rem;padding:2.5rem 0;border-bottom:1px solid var(--border2);align-items:start;}
 .exp-item:last-child{border-bottom:none;}
-.exp-meta{padding-top:0.3rem;}
+.exp-meta{padding-top:0.15rem;}
 .exp-period{font-family:var(--mono);font-size:0.68rem;color:var(--teal);letter-spacing:0.1em;text-transform:uppercase;line-height:1.6;}
 .exp-org{font-family:var(--mono);font-size:0.72rem;color:var(--dim);margin-top:0.4rem;letter-spacing:0.05em;}
-.exp-role{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:1rem;}
+.exp-role{font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:1rem;line-height:1.35;}
 .exp-points{list-style:none;}
 .exp-points li{font-size:0.875rem;color:var(--off);line-height:1.75;padding-left:1.2rem;position:relative;margin-bottom:0.4rem;}
 .exp-points li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-size:0.7rem;top:0.15em;}
@@ -215,9 +215,9 @@ nav.stuck{background:rgba(4,8,16,0.88);backdrop-filter:blur(24px);border-bottom:
 
 /* ACHIEVEMENTS */
 #achievements{background:var(--bg);}
-.ach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;align-items:stretch;}
 .ach-card{background:var(--card);border:1px solid var(--border2);padding:1.6rem 2rem;
-  display:flex;gap:1.4rem;align-items:flex-start;transition:all 0.3s var(--ease);
+  display:flex;gap:0;align-items:center;transition:all 0.3s var(--ease);
   position:relative;overflow:hidden;}
 .ach-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
   background:linear-gradient(to bottom,var(--teal),transparent);
@@ -225,8 +225,11 @@ nav.stuck{background:rgba(4,8,16,0.88);backdrop-filter:blur(24px);border-bottom:
 .ach-card:hover{border-color:var(--border);transform:translateX(6px);}
 .ach-card:hover::before{transform:scaleY(1);}
 .ach-icon{width:44px;height:44px;flex-shrink:0;background:rgba(0,212,170,0.06);
-  border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
-  font-size:1.2rem;border-radius:4px;transition:background 0.3s;}
+  border:1px solid var(--border);display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;
+  font-size:1.2rem;border-radius:4px;transition:background 0.3s;color:var(--teal);margin-right:12px;}
+.ach-icon img{width:24px;height:24px;object-fit:contain;display:block;flex-shrink:0;}
+.ach-card > div:last-child{min-width:0;}
+.ach-card > div:last-child{display:flex;flex-direction:column;justify-content:center;}
 .ach-card:hover .ach-icon{background:rgba(0,212,170,0.12);}
 .ach-title{font-size:0.95rem;font-weight:700;color:var(--white);margin-bottom:0.3rem;}
 .ach-sub{font-family:var(--mono);font-size:0.68rem;color:var(--dim);letter-spacing:0.06em;line-height:1.5;}
@@ -240,11 +243,16 @@ nav.stuck{background:rgba(4,8,16,0.88);backdrop-filter:blur(24px);border-bottom:
 
 /* CERTIFICATIONS */
 #certs{background:var(--bg2);}
-
-
-
-.cert-card:hover{border-color:var(--border);transform:translateX(4px);}
-.cert-card:hover::before{opacity:1;}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;align-items:stretch;}
+.cert-card{
+  background:var(--card);border:1px solid var(--border2);
+  padding:1.6rem 1.8rem;
+  position:relative;overflow:hidden;
+  transition:all 0.35s var(--ease);
+  display:flex;flex-direction:column;gap:0.5rem;
+  min-height:132px;
+}
+.cert-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.35);}
 
 
 
@@ -322,14 +330,6 @@ footer span{color:var(--teal);}
   .chip-br{right:-10px;}
 }
 
-.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;}
-.cert-card{
-  background:var(--card);border:1px solid var(--border2);
-  padding:1.6rem 1.8rem;
-  position:relative;overflow:hidden;
-  transition:all 0.35s var(--ease);
-  display:flex;flex-direction:column;gap:0.5rem;
-}
 .cert-card::after{
   content:'';position:absolute;
   bottom:0;left:0;right:0;height:2px;
@@ -337,7 +337,6 @@ footer span{color:var(--teal);}
   transform:scaleX(0);transform-origin:left;
   transition:transform 0.35s var(--ease);
 }
-.cert-card:hover{border-color:var(--border);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,0.35);}
 .cert-card:hover::after{transform:scaleX(1);}
 .cert-n{
   font-family:var(--mono);font-size:2.6rem;font-weight:700;
@@ -351,7 +350,9 @@ footer span{color:var(--teal);}
   text-transform:uppercase;color:var(--teal);font-weight:500;
   margin-bottom:0.3rem;
 }
-.cert-name{font-size:0.9rem;font-weight:600;color:var(--white);line-height:1.45;}
+.cert-name{font-size:0.9rem;font-weight:600;color:var(--white);line-height:1.45;max-width:calc(100% - 3rem);}
+
+.award-img{width:24px;height:24px;object-fit:contain;display:block;}
 
 
 .strength-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
@@ -486,6 +487,21 @@ footer span{color:var(--teal);}
     <div class="exp-list">
       <div class="exp-item reveal">
         <div class="exp-meta">
+          <div class="exp-period">27-Feb-2026 - Present</div>
+          <div class="exp-org"><strong>C-DAC</strong></div>
+        </div>
+        <div>
+          <div class="exp-role">Cloud Intern</div>
+          <ul class="exp-points">
+            <li>Working on OpenStack cloud infrastructure</li>
+            <li>Working on the Meghadoot project</li>
+            <li>Contributing to OpenStack bug fixes</li>
+          </ul>
+          <div class="exp-tags"><span class="tag">Cloud</span><span class="tag">OpenStack</span><span class="tag">Operations</span></div>
+        </div>
+      </div>
+      <div class="exp-item reveal">
+        <div class="exp-meta">
           <div class="exp-period">Dec 2025 – Jan 2026</div>
           <div class="exp-org"><strong>
             Anna University · Chennai</strong></div>
@@ -512,20 +528,6 @@ footer span{color:var(--teal);}
             <li>Applied industry-standard security workflows and defensive analysis practices</li>
           </ul>
           <div class="exp-tags"><span class="tag">Threat Modelling</span><span class="tag">Risk Analysis</span></div>
-        </div>
-      </div>
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">Sep – Oct 2025</div>
-          <div class="exp-org"><strong>ShadowFox · Chennai</strong></div>
-        </div>
-        <div>
-          <div class="exp-role">Cyber Security Intern</div>
-          <ul class="exp-points">
-            <li>Performed infrastructure vulnerability assessments and structured threat analysis reporting</li>
-            <li>Implemented security hardening to strengthen organizational defense posture</li>
-          </ul>
-          <div class="exp-tags"><span class="tag">Vulnerability Assessment</span><span class="tag">Hardening</span></div>
         </div>
       </div>
     </div>
@@ -570,12 +572,42 @@ footer span{color:var(--teal);}
     <div class="s-tag reveal">Recognition</div>
     <h2 class="s-title reveal">Awards & Achievements</h2>
     <div class="ach-grid">
-      <div class="ach-card reveal"><div class="ach-icon">🏆</div><div><div class="ach-title">1st Place — CTF</div><div class="ach-sub">Dr. M.G.R. College National Symposium</div><span class="ach-badge badge-gold">1st Place</span></div></div>
-      <div class="ach-card reveal"><div class="ach-icon">⭐</div><div><div class="ach-title">IEEE YESIST 2025</div><div class="ach-sub">International IEEE Competition</div><span class="ach-badge badge-purple">Honourable Mention</span></div></div>
-      <div class="ach-card reveal"><div class="ach-icon">🎯</div><div><div class="ach-title">ABV IIITM Hacksagon 2025</div><div class="ach-sub">National Hackathon · IIITM Gwalior · Track 1: Smart Cities & IoT</div><span class="ach-badge badge-blue">Finalist</span></div></div>
-      <div class="ach-card reveal"><div class="ach-icon">🔐</div><div><div class="ach-title">TN Police Hackathon 2025</div><div class="ach-sub">Tor Network Forensics Tool</div><span class="ach-badge badge-blue">Finalist</span></div></div>
-      <div class="ach-card reveal"><div class="ach-icon">⚡</div><div><div class="ach-title">SANS-AWS Skills to Jobs CTF</div><div class="ach-sub">Online CTF Competition</div><span class="ach-badge badge-green">Top Performer</span></div></div>
-      <div class="ach-card reveal"><div class="ach-icon">🌐</div><div><div class="ach-title">Inter-College & Online CTFs</div><div class="ach-sub">Web Exploitation · Forensics · OSINT · Crypto</div><span class="ach-badge badge-teal">Active Player</span></div></div>
+      <div class="ach-card reveal">
+        <div class="ach-icon" aria-hidden="true">
+          <img class="award-img" src="ctf.png" alt="CTF award icon"/>
+        </div>
+        <div><div class="ach-title">1st Place — CTF</div><div class="ach-sub">Dr. M.G.R. College National Symposium</div><span class="ach-badge badge-gold">1st Place</span></div>
+      </div>
+      <div class="ach-card reveal">
+        <div class="ach-icon" aria-hidden="true">
+          <img class="award-img" src="ieee.png" alt="IEEE award icon"/>
+        </div>
+        <div><div class="ach-title">IEEE YESIST 2025</div><div class="ach-sub">International IEEE Competition</div><span class="ach-badge badge-purple">Honourable Mention</span></div>
+      </div>
+      <div class="ach-card reveal">
+        <div class="ach-icon" aria-hidden="true">
+          <img class="award-img" src="abv.png" alt="ABV IIITM Hacksagon award icon"/>
+        </div>
+        <div><div class="ach-title">ABV IIITM Hacksagon 2025</div><div class="ach-sub">National Hackathon · IIITM Gwalior · Track 1: Smart Cities & IoT</div><span class="ach-badge badge-blue">Finalist</span></div>
+      </div>
+      <div class="ach-card reveal">
+        <div class="ach-icon" aria-hidden="true">
+          <img class="award-img" src="tn.png" alt="TN Police Hackathon award icon"/>
+        </div>
+        <div><div class="ach-title">TN Police Hackathon 2025</div><div class="ach-sub">Tor Network Forensics Tool</div><span class="ach-badge badge-blue">Finalist</span></div>
+      </div>
+      <div class="ach-card reveal">
+        <div class="ach-icon" aria-hidden="true">
+          <img class="award-img" src="meta.png" alt="Meta OpenEnv Hackathon finalist icon"/>
+        </div>
+        <div><div class="ach-title">Meta OpenEnv Hackathon Finalist</div><div class="ach-sub">Open environment innovation challenge</div><span class="ach-badge badge-green">Finalist</span></div>
+      </div>
+      <div class="ach-card reveal">
+        <div class="ach-icon" aria-hidden="true">
+          <img class="award-img" src="aws.png" alt="AWS 10,000 AIIdeas semi-finalist icon"/>
+        </div>
+        <div><div class="ach-title">AWS 10,000 AIIdeas Semi-Finalist</div><div class="ach-sub">AWS innovation and AI ideas program</div><span class="ach-badge badge-teal">Semi-Finalist</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -592,6 +624,7 @@ footer span{color:var(--teal);}
       <div class="cert-card reveal"><div class="cert-n">05</div><div class="cert-iss">Google Cloud</div><div class="cert-name">Google Cloud — ML APIs Certification</div></div>
       <div class="cert-card reveal"><div class="cert-n">06</div><div class="cert-iss">Forage · Deloitte</div><div class="cert-name">Deloitte Australia — Cyber Job Simulation</div></div>
       <div class="cert-card reveal"><div class="cert-n">07</div><div class="cert-iss">Forage · Tata Group</div><div class="cert-name">Tata Group — ESG Job Simulation</div></div>
+      <div class="cert-card reveal"><div class="cert-n">08</div><div class="cert-iss">APIsec</div><div class="cert-name">APIsec Certificate</div></div>
     </div>
   </div>
 </section>
